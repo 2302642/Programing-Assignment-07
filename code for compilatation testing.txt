@@ -1,0 +1,11 @@
+g++ -std=c++17 -pedantic-errors -Wall -Wextra -Werror vct-driver.cpp Str.cpp -o vec.out
+./vec.out 0 > testoutput0.txt
+./vec.out 1 > testoutput1.txt
+./vec.out 2 > testoutput2.txt
+./vec.out 3 > testoutput3.txt
+./vec.out 4 > testoutput4.txt
+diff -y --strip-trailing-cr --suppress-common-lines test0.txt testoutput0.txt
+diff -y --strip-trailing-cr --suppress-common-lines test1.txt testoutput1.txt
+diff -y --strip-trailing-cr --suppress-common-lines test2.txt testoutput2.txt
+diff -y --strip-trailing-cr --suppress-common-lines test3.txt testoutput3.txt
+diff -y --strip-trailing-cr --suppress-common-lines test4.txt testoutput4.txt
